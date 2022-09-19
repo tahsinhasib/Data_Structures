@@ -56,7 +56,7 @@ int main()
     cout << "\nSample Output: \n";
     for(i=0; i<3; i++){
         for(j=0; j<3; j++){
-            cout << sum_mat[i][j] << " ";
+            cout << sum_mat[i][j] << " ";   //display
         }
         cout << "\n";
     }
