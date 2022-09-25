@@ -2,6 +2,8 @@
 For deleting array element we will traverse the array elements by +1 starting
 from the element that we want to delete and print the all indexes like as usual. 
 
+Deletion refers to removing an existing element from the array and re-organizing all elements of an array.
+
 For example, Arr[5] = {1,2,3,4,5};
 
 here if want to delete element 3, we need to make changes in the index of that
