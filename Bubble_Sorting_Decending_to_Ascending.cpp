@@ -23,7 +23,7 @@ void bubbleSort(int arr[], int size){
 
         for(int j=0; j<size-1-i; j++){
             
-            if(arr[j]>arr[j+1]){    //condition for asc to dec
+            if(arr[j]<arr[j+1]){    //condition for dec to asc
 
                 temp = arr[j];      //swapping elements
                 arr[j] = arr[j+1];
