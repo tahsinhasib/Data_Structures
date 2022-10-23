@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-int Queue[5];                                           //maximum size will be 5
+int Queue[5];                                           //we assume the maximum size will be 5
 int front=-1;                                           //when there is no element the default value of front is -1
 int rear=-1;                                            //when there is no element the default value of rear -1
 
