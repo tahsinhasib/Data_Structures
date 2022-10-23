@@ -6,7 +6,7 @@ int front=-1;                                           //when there is no eleme
 int rear=-1;                                            //when there is no element the default value of rear -1
 
 bool isFull(){
-    if(rear==4){                                        //for the size 5, index 4 is max
+    if(front==0 && rear==4){                            //for the size 5, index 4 is max
         cout << "Queue is full!\n";
         return true;
     }
@@ -28,7 +28,7 @@ bool isEmpty(){
 }
 
 void Enqueue(int value){
-    if(rear==4){
+    if(front==0 && rear==4){
         cout << "Queue is full!\n";
     }
     else{
