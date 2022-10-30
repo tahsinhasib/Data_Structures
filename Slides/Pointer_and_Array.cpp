@@ -23,6 +23,13 @@ int main()
     cout << "1st element: " << *r << "\n";
     cout << "3rd element: " << r[2] << "\n";
     cout << "3rd element: " << *(r+2) << "\n";
+    
+    
+    cout << "---------------------------------" << "\n";
+    cout << (p+2) << "\n";               //prints the address of index 2
+    cout << &p[2] << "\n";                  //same
+    
+    
 
     float *p;
     p=r;        //&r[0]
