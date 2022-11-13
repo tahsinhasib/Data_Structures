@@ -1,46 +1,34 @@
 #include<iostream>
 using namespace std;
 
-/*
-	A linked list is a linear data structure, in which the elements are not stored at 
-	contiguous memory locations. 
-*/
-
-struct Node{										// a linked list node
-	int data;										// a sturcture variable (can be any)
-	struct Node *next;								//
+struct Node{										
+	int data;										
+	struct Node *next;								
 };
 
 Node *head;
 
-/*
-	To access members of a structure, use the dot operator. 
-	To access members of a structure through a pointer, use the arrow operator.
-*/
-
-
-
 Node *GetNewNode(int x){
-	Node *NewNode = new Node();						// dinamically space allocation
-	NewNode->data=x;								// to access structure through a pointer
-	NewNode->next=NULL;								// a pointer which points at the next node
-	return NewNode;									// returns NewNode
+	Node *NewNode = new Node();						
+	NewNode->data=x;								
+	NewNode->next=NULL;								
+	return NewNode;								
 }
 
-void InsertAtHead(int x){							// at first
-	Node *NewNode = GetNewNode(x);					// GetNewNode is called for creating a new node
+void InsertAtHead(int x){							
+	Node *NewNode = GetNewNode(x);					
 	NewNode->next = head;
 	head = NewNode;
 }
 
 void InserAtTail(int x){
 	Node *NewNode = GetNewNode(x);
-	if (head==NULL){								// if head is not full then it is the tail
+	if (head==NULL){								
 		head=NewNode;
 		return;
 	}
 
-	Node *temp=head;								// stores the created node(head) temporary
+	Node *temp=head;								
 
 	while (temp->next != NULL){
 		temp=temp->next;
