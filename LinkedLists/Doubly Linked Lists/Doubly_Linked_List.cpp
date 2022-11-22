@@ -9,7 +9,6 @@ struct Node{
 
 Node *head;
 
-
 Node *GetNewNode(int x){
 	Node* NewNode = new Node();
 	NewNode->data = x;
