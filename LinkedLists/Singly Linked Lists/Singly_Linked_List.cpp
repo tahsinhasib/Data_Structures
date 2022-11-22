@@ -9,51 +9,43 @@ struct Node{
 Node *head;
 
 Node *GetNewNode(int x){
-	Node *NewNode = new Node();						// dynamic memory allocation			
-	NewNode->data=x;								// inserting the value 'x' in data	
-	NewNode->next=NULL;								// making next pointer null
-	return NewNode;									// returning the NewNode
+	Node *NewNode = new Node();								
+	NewNode->data=x;									
+	NewNode->next=NULL;								
+	return NewNode;									
 }
 
-													// GetNewNode can be used now directly
-
+											
 void InsertAtHead(int x){							
-	Node *NewNode = GetNewNode(x);					// passing the x in GetNewNode for creation
-	NewNode->next = head;							// making the NewNode's next point to head	      
-	head = NewNode;									// after pointing making the NewNode a head				   						
+	Node *NewNode = GetNewNode(x);					
+	NewNode->next = head;							  
+	head = NewNode;												   						
 }
 
-/*
-	|-||-|			->	|-||-|		|-||-|
-	NewNode's next	     head		others
-*/
 
 
 void InserAtTail(int x){
-	Node *NewNode = GetNewNode(x);					// each time creating a node
-
-	if(head==NULL){									// checking if head is null
-		head=NewNode;								// if null then the node is the head and also the tail
-		return;										// returning
+	Node *NewNode = GetNewNode(x);					
+	if(head==NULL){									
+		head=NewNode;								
+		return;										
 	}
+	Node *temp=head;											
 
-	Node *temp=head;								// making a pointer temp in which the head's value is assigned				
-
-	while(temp->next != NULL){						// process keeps going until the next 
+	while(temp->next != NULL){					
 		temp=temp->next;
 	}
-	temp->next = NewNode;							// if the next is null then assign the value of NewNode
+	temp->next = NewNode;							
 }
 
 
-void InserAtAnyPosition(int n, int x){				// n for pos 
+void InserAtAnyPosition(int n, int x){				
 	Node *NewNode = GetNewNode(x);
 	if(n==1){
-		NewNode->next = head;						// position 1 is head
-		head = NewNode;								// assigning NewNode in head
+		NewNode->next = head;					
+		head = NewNode;				
 		return;
 	}
-
 	Node *temp = head;								
 	for(int i=1; i<n-1; i++){
 		temp = temp->next;
@@ -62,19 +54,18 @@ void InserAtAnyPosition(int n, int x){				// n for pos
 	temp->next = NewNode;
 }
 
+
 void Delete(int n){
 	if(head==NULL){
 		cout << "Error: Nothing to delete " << "\n";
 		return;
 	}
 	Node *temp = head;
-
 	if(n==1){
 		head = temp->next;
 		delete temp;
 		return;
 	}
-
 	for(int i=1; i<n-1; i++){
 		temp = temp->next;
 	}
@@ -82,16 +73,15 @@ void Delete(int n){
 	temp->next = temp2->next;
 
 	delete temp2;
-
 	return;
 }
+
 
 void DeleteTail(){
 	Node *temp=head;
 	Node *temp2=temp;
-
+	
 	int i=0;
-
 	while(temp->next != NULL){
 		if(i>0){
 			temp2 = temp2->next;
@@ -104,16 +94,18 @@ void DeleteTail(){
 	delete temp;
 }
 
+
 void Traverse(){
 	Node *temp=head;
+	
 	cout << "List is: ";
-
 	while(temp!=NULL){
 		cout << temp->data << " ";
 		temp = temp->next;
 	}
 	cout << endl;
 }
+
 
 void Search(int x){
 	Node *temp=head;
@@ -127,6 +119,7 @@ void Search(int x){
 	}
 	cout << "Not found" << "\n";
 }
+
 
 int main()
 {
