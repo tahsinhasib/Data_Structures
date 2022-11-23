@@ -9,14 +9,15 @@ struct BstNode{
 
 BstNode *root;
 
-BstNode *GetNewNode(int data)
-{
+
+BstNode *GetNewNode(int data){
 	BstNode *NewNode = new BstNode();
 	NewNode->data = data;
 	NewNode->left = NULL;
 	NewNode->right = NULL;
 	return NewNode;
 }
+
 
 void PreOrder(BstNode *root){
 	if(root==NULL){
@@ -32,7 +33,7 @@ void InOrder(BstNode *root){
 
 	InOrder(root->left);
     
-    if(root==NULL){
+    	if(root==NULL){
 		return;
 	}
 	cout << root->data << " ";
@@ -40,12 +41,13 @@ void InOrder(BstNode *root){
 	InOrder(root->right);
 }
 
+
 void PostOrder(BstNode *root){
 	
 	PostOrder(root->left);
-    PostOrder(root->right);
+    	PostOrder(root->right);
 
-    if(root==NULL){
+    	if(root==NULL){
 		return;
 	}
 	cout << root->data << " ";
@@ -57,10 +59,10 @@ BstNode *Insert(BstNode *root, int data){
 	if(root==NULL){
 		root = GetNewNode(data);
 	}
-	else if (data <= root->data){
+	else if(data <= root->data){
 		root->left = Insert(root->left, data);
 	}
-	else{
+	else{	
 		root->right = Insert(root->right, data);
 	}
 	return root;
@@ -81,6 +83,7 @@ bool Search(BstNode *root, int data){
 		return Search(root->right, data);
 	}
 }
+
 
 int main()
 {
@@ -107,8 +110,6 @@ int main()
 	}
 
 	PreOrder(root);
-
+	
+	return 0;
 }
-
-
-
