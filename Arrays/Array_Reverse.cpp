@@ -27,5 +27,5 @@ int main()
         cout << arr[i] << " ";
     }
     
-    getch();
+    return 0;
 }
