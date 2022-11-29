@@ -52,7 +52,7 @@ int main()
 	int arr[] = { 9, 3, 4, 2, 1, 8 };
 	int n = 6;
 
-	quickSort(arr, 0, n - 1);
+	quickSort(arr, 0, n-1);
 
 	for(int i=0; i<n; i++){                         // printing the sorted array
 		cout << arr[i] << " ";
