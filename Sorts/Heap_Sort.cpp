@@ -12,11 +12,11 @@ void heapify(int arr[], int n, int i){
 	int r=2 * i+2;                              // right = 2*i + 2
 
 	if(l<n && arr[l] > arr[largest]){           // If left child is larger than root
-        largest = l;
-    }            
+        	largest = l;
+   	}            
 	if(r<n && arr[r] > arr[largest]){           // If right child is larger than largest so far
-        largest = r;
-    }            
+        	largest = r;
+    	}            
 	if(largest != i){                           // If largest is not root
 		swap(arr[i], arr[largest]);
 		heapify(arr, n, largest);               // Recursively heapify the affected sub-tree
@@ -24,11 +24,10 @@ void heapify(int arr[], int n, int i){
 }
 
 
-
-void heapSort(int arr[], int n){                // main function to do heap sort
+void heapSort(int arr[], int n){                	// main function to do heap sort
 	for(int i=n/2-1; i>=0; i--){                // Build heap (rearrange array)
-        heapify(arr, n, i);
-    }               
+        	heapify(arr, n, i);
+    	}               
 	for(int i=n-1; i>=0; i--){                  // One by one extract an element from heap
 		swap(arr[0], arr[i]);                   // Move current root to end
 		heapify(arr, i, 0);                     // call max heapify on the reduced heap
@@ -39,7 +38,7 @@ void heapSort(int arr[], int n){                // main function to do heap sort
 void printArray(int arr[], int n){              // A utility function to print array of size n 
 	for (int i = 0; i < n; ++i){
         cout << arr[i] << " ";
-    }		
+    	}		
 	cout << "\n";
 }
 
