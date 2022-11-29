@@ -13,8 +13,8 @@ int partition(int arr[], int start, int end){
     
 	for(int i=start+1; i<=end; i++){
 		if(arr[i] <= pivot){
-            count++;
-        }
+            		count++;
+        	}
 	}
 	int pivotIndex = start + count;                 // Giving pivot element its correct position
 	swap(arr[pivotIndex], arr[start]);
