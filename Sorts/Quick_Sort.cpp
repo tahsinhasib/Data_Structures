@@ -39,8 +39,8 @@ int partition(int arr[], int start, int end){
 void quickSort(int arr[], int start, int end){
 
 	if(start >= end){
-        return;                                     // base case
-    }                               
+        	return;                                     // base case
+    	}                               
 	int p = partition(arr, start, end);             // partitioning the array
 	quickSort(arr, start, p-1);                     // Sorting the left part
 	quickSort(arr, p+1, end);                       // Sorting the right part
