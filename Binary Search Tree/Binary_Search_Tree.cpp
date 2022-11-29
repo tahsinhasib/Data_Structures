@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 
+
 struct BstNode{
 	int data;
 	BstNode *left;
