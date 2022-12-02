@@ -26,7 +26,7 @@ void PreOrder(BstNode *root){
 	}
 	cout << root->data << " ";
 	
-    PreOrder(root->left); //Recursion
+    	PreOrder(root->left); //Recursion
 	PreOrder(root->right); //Recursion
 }
 
