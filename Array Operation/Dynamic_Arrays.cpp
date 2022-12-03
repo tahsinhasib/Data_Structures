@@ -1,5 +1,4 @@
 #include<iostream>
-#include<conio.h>
 using namespace std;
 
 int main()
@@ -25,8 +24,7 @@ int main()
         we must delete that array in order to free some space,
         avoiding unncessary space.
     */
-
-
+  
     int *myArray = new int[size];           //allocating memory
 
     for(int i=0; i<size; i++){
@@ -53,5 +51,5 @@ int main()
         cout << *(myArray+i) << " ";        //another way for dereferencing
     }
 
-    getch();
+    return 0;
 }
