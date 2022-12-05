@@ -20,58 +20,65 @@ BstNode *GetNewNode(int data){
 }
 
 
-void PreOrder(BstNode *root){
-	if(root==NULL){
-		return;
-	}
-	cout << root->data << " ";
-	
-    	PreOrder(root->left); //Recursion
-	PreOrder(root->right); //Recursion
-}
-
-void InOrder(BstNode *root){
-
-	InOrder(root->left);
-    
-    	if(root==NULL){
-		return;
-	}
-	cout << root->data << " ";
-
-	InOrder(root->right);
-}
 
 
-void PostOrder(BstNode *root){
-	
-	PostOrder(root->left);
-    	PostOrder(root->right);
-
-    	if(root==NULL){
-		return;
-	}
-	cout << root->data << " ";
-}
-
-
-
+// insertion process
 BstNode *Insert(BstNode *root, int data){
 	if(root==NULL){
 		root = GetNewNode(data);
+		cout << "Succesfully Inserted!" << "\n";        // all the insertion is made in root
 	}
 	else if(data <= root->data){
-		root->left = Insert(root->left, data);
+		root->left = Insert(root->left, data);          // inserts in left node
 	}
-	else{	
-		root->right = Insert(root->right, data);
+	else{
+		root->right = Insert(root->right, data);        // inserts in right node
 	}
 	return root;
 }
 
+
+
+
+// Preorder traversal
+void preorderTraversal(struct BstNode* root){
+    if(root == NULL){
+        return;
+    }
+
+    cout << root->data << " -> ";
+    preorderTraversal(root->left);
+    preorderTraversal(root->right);
+}
+
+
+// Postorder traversal
+void postorderTraversal(struct BstNode* root) {
+    if(root == NULL){
+        return;
+    }
+
+    postorderTraversal(root->left);
+    postorderTraversal(root->right);
+    cout << root->data << " -> ";
+}
+
+
+// Inorder traversal
+void inorderTraversal(struct BstNode* root) {
+    if(root == NULL){
+        return;
+    }
+
+    inorderTraversal(root->left);
+    cout << root->data << " -> ";
+    inorderTraversal(root->right);
+}
+
+
 bool Search(BstNode *root, int data){
 	if(root==NULL){
-		cout << "Error: tree is empty" << endl;
+		cout << "Error: tree is empty" << "\n";
 		return false;
 	}
 	else if(root->data == data){
@@ -88,29 +95,45 @@ bool Search(BstNode *root, int data){
 
 int main()
 {
+    cout << "|----------------------------------------------------------|" << "\n";
 	root = NULL;
-    
+
 	root = Insert(root, 5);
-	root = Insert(root, 6);
-	root = Insert(root, 4);
-	root = Insert(root, 7);
 	root = Insert(root, 3);
 	root = Insert(root, 2);
+	root = Insert(root, 4);
+	root = Insert(root, 7);
+	root = Insert(root, 6);
+	root = Insert(root, 8);
 
-	cout << "please enter your search item: ";
+
+
+    cout << "|----------------------------------------------------------|" << "\n";
+    cout << "Tree Traversal" << "\n";
+    cout << "Preorder Traversal  ---> ";
+    preorderTraversal(root);
+    cout << "\n";
+    cout << "Postorder Traversal ---> ";
+    postorderTraversal(root);
+    cout << "\n";
+    cout << "Inorder Traversal   ---> ";
+    inorderTraversal(root);
+    cout << "\n";
+
+
+    cout << "|----------------------------------------------------------|" << "\n";
+    cout << "Enter search item: ";
 
 	int s;
 	cin >> s;
 	cout << "\n";
 
 	if(Search(root, s) == true){
-		cout << "found" << endl;
+		cout << "Element found!" << "\n";
 	}
 	else{
-		cout << "Not found" << endl;
+		cout << "Element not found" << "\n";
 	}
 
-	PreOrder(root);
-	
 	return 0;
 }
