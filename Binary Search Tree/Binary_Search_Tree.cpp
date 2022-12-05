@@ -38,8 +38,6 @@ BstNode *Insert(BstNode *root, int data){
 }
 
 
-
-
 // Preorder traversal
 void preorderTraversal(struct BstNode* root){
     if(root == NULL){
