@@ -65,6 +65,7 @@ void postorderTraversal(struct BstNode* root) {
 
 
 // Inorder traversal
+//We know, inorder traversal of a binary search tree always yields all the nodes in increasing order.
 void inorderTraversal(struct BstNode* root) {
     if(root == NULL){
         return;
