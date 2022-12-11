@@ -41,6 +41,9 @@ BstNode *Insert(BstNode *root, int data){
 
 // traversal process
 // Preorder traversal
+
+//	Root -> Left -> Right
+
 void preorderTraversal(struct BstNode* root){
     if(root == NULL){
         return;
@@ -53,6 +56,9 @@ void preorderTraversal(struct BstNode* root){
 
 
 // Postorder traversal
+
+//	Left -> Right -> Root
+
 void postorderTraversal(struct BstNode* root) {
     if(root == NULL){
         return;
@@ -65,6 +71,9 @@ void postorderTraversal(struct BstNode* root) {
 
 
 // Inorder traversal
+
+//	Left -> Root -> Right
+
 //We know, inorder traversal of a binary search tree always yields all the nodes in increasing order.
 void inorderTraversal(struct BstNode* root) {
     if(root == NULL){
