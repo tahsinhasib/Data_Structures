@@ -11,6 +11,7 @@ struct BstNode{
 BstNode *root;
 
 
+
 BstNode *GetNewNode(int data){
 	BstNode *NewNode = new BstNode();
 	NewNode->data = data;
