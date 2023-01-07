@@ -1,5 +1,18 @@
 /*
-    To heapify a subtree rooted with node i which is an index in arr[]. n is size of heap
+
+Heapsort is a comparison-based sorting algorithm that works by building a heap out of the elements to be sorted, 
+and then repeatedly extracting the maximum element from the heap until it is empty. Here's how it works in detail:
+
+1. Build a heap from the input data. A heap is a complete binary tree in which the value of each node is greater 
+   than or equal to the values of its children. This means that the maximum element will always be at the root of the heap.
+2. Repeatedly swap the maximum element (the root of the heap) with the last element in the heap, and then "heapify" the 
+   heap by adjusting the positions of the remaining elements to maintain the heap property.
+3. After all the elements have been removed from the heap, the resulting array will be sorted.
+
+Heapsort has a time complexity of O(n log n), which makes it very efficient for sorting large arrays. It is also an in-place 
+sorting algorithm, which means it does not require any additional space to sort the array. However, it is not stable, which 
+means that the relative order of elements with equal values may be changed during the sort.
+   
 */
 
 #include <iostream>
