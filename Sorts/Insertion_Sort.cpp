@@ -1,9 +1,17 @@
-#include<iostream>
-#include<conio.h>
-using namespace std;
+/*
 
-int main()
-{
+Insertion sort is a simple sorting algorithm that works by building up the sorted portion of the 
+array one element at a time. Here's how it works in detail:
+
+1. Start with the second element in the array.
+2. Compare the second element to the one before it and swap them if necessary.
+3. Continue this process with the third element, and so on, until the array is sorted.
+
+Insertion sort has a time complexity of O(n^2), which makes it inefficient for sorting large arrays. It is also 
+a stable sort, which means that the relative order of elements with equal values is preserved. However, it has 
+the advantage of being easy to understand and implement, and it is efficient for small arrays and for 
+partially-sorted arrays.
+
 
    //  -1   0    1   2   3   4   5
    //      12,| 54, 65, 07, 23, 09 --> i=1, key=54, j=0
@@ -27,9 +35,16 @@ int main()
    //      07, 09, 12, 23, 54, 65| --> After the 5th pass 
 
 
+*/
 
 
 
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+int main()
+{
     int arr[] = {12,54,65,7,23,9};
     int size=6;
 
