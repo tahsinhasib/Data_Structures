@@ -1,3 +1,20 @@
+/*
+
+Quicksort is a divide and conquer algorithm that works by partitioning an array into two smaller arrays, 
+sorting the smaller arrays, and then merging them back together. Here's how it works in detail:
+
+1. Choose a pivot element from the array. This element will be used to partition the array into two smaller arrays.
+2. Divide the array into two smaller arrays, with all the elements in the left array being less than the pivot element 
+    and all the elements in the right array being greater than the pivot element.
+3. Recursively sort the left and right arrays.
+4. Merge the left and right arrays back together, with the pivot element in the middle.
+
+Quicksort has a time complexity of O(n log n), which makes it very efficient for sorting large arrays. It is also 
+an in-place sorting algorithm, which means it does not require any additional space to sort the array.
+
+*/
+
+
 #include <iostream>
 #include <algorithm>
 using namespace std;
